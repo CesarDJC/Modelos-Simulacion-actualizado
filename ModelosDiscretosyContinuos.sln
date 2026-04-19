@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelosDiscretosyContinuos", "ModelosDiscretosyContinuos.csproj", "{4A2E9A10-8D71-4501-BF06-AA6170B842B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A2E9A10-8D71-4501-BF06-AA6170B842B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2E9A10-8D71-4501-BF06-AA6170B842B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2E9A10-8D71-4501-BF06-AA6170B842B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2E9A10-8D71-4501-BF06-AA6170B842B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDEE2960-16F4-4E04-BE1E-722CBA717F40}
+	EndGlobalSection
+EndGlobal
