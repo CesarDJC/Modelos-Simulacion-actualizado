@@ -58,21 +58,47 @@ namespace ModelosDiscretosyContinuos
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Font = new Font("Microsoft Sans Serif", 8.25f);
 
-
+            // ========== INSTANCIAR TODOS LOS CONTROLES ==========
             openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Archivos Excel (*.xlsx;*.xls)|*.xlsx;*.xls|Archivos CSV (*.csv)|*.csv|Todos los archivos (*.*)|*.*";
             openFileDialog.Title = "Seleccionar archivo de datos";
 
-       
             btnCargarArchivo = new Button();
+            btnEnviarAForm1 = new Button();
+            btnLimpiar = new Button();
+            btnCalcularFrecuencias = new Button();
+
+            gbSeleccion = new GroupBox();
+            gbParametros = new GroupBox();
+            gbEstadisticos = new GroupBox();
+            gbFrecuencias = new GroupBox();
+
+            cmbColumnas = new ComboBox();
+            cmbCategorias = new ComboBox();
+
+            lblTotalRegistros = new Label();
+            lblExitos = new Label();
+
+            txtN = new TextBox();
+            txtK = new TextBox();
+            txtn = new TextBox();
+            txtMedia = new TextBox();
+            txtProbabilidad = new TextBox();
+            txtDesviacion = new TextBox();
+
+            dgvDatos = new DataGridView();
+            dgvFrecuencias = new DataGridView();
+
+            // ========== CONFIGURAR CONTROLES ==========
+
+            // Botón Cargar Archivo
             btnCargarArchivo.Text = "Cargar Archivo Excel/CSV";
             btnCargarArchivo.Location = new Point(20, 20);
             btnCargarArchivo.Size = new Size(180, 30);
             btnCargarArchivo.Click += BtnCargarArchivo_Click;
             this.Controls.Add(btnCargarArchivo);
 
-
-            gbSeleccion = new GroupBox();
+            // GroupBox Selección
             gbSeleccion.Text = "Selección de Datos";
             gbSeleccion.Location = new Point(220, 20);
             gbSeleccion.Size = new Size(400, 140);
@@ -84,54 +110,46 @@ namespace ModelosDiscretosyContinuos
             lblColumnas.Size = new Size(80, 20);
             gbSeleccion.Controls.Add(lblColumnas);
 
-            cmbColumnas = new ComboBox();
             cmbColumnas.Location = new Point(100, 27);
             cmbColumnas.Size = new Size(180, 21);
             cmbColumnas.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbColumnas.SelectedIndexChanged += CmbColumnas_SelectedIndexChanged;
             gbSeleccion.Controls.Add(cmbColumnas);
 
-     
             Label lblCategorias = new Label();
             lblCategorias.Text = "Categoría (éxito):";
             lblCategorias.Location = new Point(15, 65);
             lblCategorias.Size = new Size(80, 20);
             gbSeleccion.Controls.Add(lblCategorias);
 
-            cmbCategorias = new ComboBox();
             cmbCategorias.Location = new Point(100, 62);
             cmbCategorias.Size = new Size(180, 21);
             cmbCategorias.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCategorias.SelectedIndexChanged += CmbCategorias_SelectedIndexChanged;
             gbSeleccion.Controls.Add(cmbCategorias);
 
-
-            lblTotalRegistros = new Label();
             lblTotalRegistros.Text = "N (total): 0";
             lblTotalRegistros.Location = new Point(300, 30);
             lblTotalRegistros.Size = new Size(90, 20);
             gbSeleccion.Controls.Add(lblTotalRegistros);
 
-            lblExitos = new Label();
             lblExitos.Text = "K (éxitos): 0";
             lblExitos.Location = new Point(300, 65);
             lblExitos.Size = new Size(90, 20);
             gbSeleccion.Controls.Add(lblExitos);
 
-        
+            // GroupBox Parámetros
             gbParametros.Text = "Parámetros del Modelo";
             gbParametros.Location = new Point(20, 170);
             gbParametros.Size = new Size(400, 120);
             this.Controls.Add(gbParametros);
 
-   
             Label lblNPoblacion = new Label();
             lblNPoblacion.Text = "N (población):";
             lblNPoblacion.Location = new Point(15, 30);
             lblNPoblacion.Size = new Size(80, 20);
             gbParametros.Controls.Add(lblNPoblacion);
 
-            txtN = new TextBox();
             txtN.Location = new Point(100, 27);
             txtN.Size = new Size(80, 20);
             txtN.ReadOnly = true;
@@ -144,41 +162,35 @@ namespace ModelosDiscretosyContinuos
             lblKExitos.Size = new Size(80, 20);
             gbParametros.Controls.Add(lblKExitos);
 
-            txtK = new TextBox();
             txtK.Location = new Point(100, 57);
             txtK.Size = new Size(80, 20);
             txtK.ReadOnly = true;
             txtK.BackColor = SystemColors.Control;
             gbParametros.Controls.Add(txtK);
 
-      
             Label lblNMuestra = new Label();
             lblNMuestra.Text = "n (muestra):";
             lblNMuestra.Location = new Point(15, 90);
             lblNMuestra.Size = new Size(80, 20);
             gbParametros.Controls.Add(lblNMuestra);
 
-            txtn = new TextBox();
             txtn.Location = new Point(100, 87);
             txtn.Size = new Size(80, 20);
             txtn.Text = "";
             gbParametros.Controls.Add(txtn);
 
-         
-            gbEstadisticos = new GroupBox();
+            // GroupBox Estadísticos
             gbEstadisticos.Text = "Estadísticos Descriptivos";
             gbEstadisticos.Location = new Point(440, 170);
             gbEstadisticos.Size = new Size(380, 120);
             this.Controls.Add(gbEstadisticos);
 
-   
             Label lblMediaLabel = new Label();
             lblMediaLabel.Text = "Media:";
             lblMediaLabel.Location = new Point(15, 30);
             lblMediaLabel.Size = new Size(80, 20);
             gbEstadisticos.Controls.Add(lblMediaLabel);
 
-            txtMedia = new TextBox();
             txtMedia.Location = new Point(100, 27);
             txtMedia.Size = new Size(80, 20);
             txtMedia.ReadOnly = true;
@@ -191,29 +203,25 @@ namespace ModelosDiscretosyContinuos
             lblProbabilidadLabel.Size = new Size(80, 20);
             gbEstadisticos.Controls.Add(lblProbabilidadLabel);
 
-            txtProbabilidad = new TextBox();
             txtProbabilidad.Location = new Point(280, 27);
             txtProbabilidad.Size = new Size(80, 20);
             txtProbabilidad.ReadOnly = true;
             txtProbabilidad.BackColor = SystemColors.Control;
             gbEstadisticos.Controls.Add(txtProbabilidad);
 
- 
             Label lblDesviacionLabel = new Label();
             lblDesviacionLabel.Text = "Desviación:";
             lblDesviacionLabel.Location = new Point(15, 60);
             lblDesviacionLabel.Size = new Size(80, 20);
             gbEstadisticos.Controls.Add(lblDesviacionLabel);
 
-            txtDesviacion = new TextBox();
             txtDesviacion.Location = new Point(100, 57);
             txtDesviacion.Size = new Size(80, 20);
             txtDesviacion.ReadOnly = true;
             txtDesviacion.BackColor = SystemColors.Control;
             gbEstadisticos.Controls.Add(txtDesviacion);
 
-      
-            dgvDatos = new DataGridView();
+            // DataGridView Datos
             dgvDatos.Location = new Point(20, 300);
             dgvDatos.Size = new Size(940, 200);
             dgvDatos.ReadOnly = true;
@@ -225,14 +233,12 @@ namespace ModelosDiscretosyContinuos
             dgvDatos.BackgroundColor = SystemColors.Window;
             this.Controls.Add(dgvDatos);
 
-     
-            gbFrecuencias = new GroupBox();
+            // GroupBox Frecuencias
             gbFrecuencias.Text = "Tabla de Distribución de Frecuencias";
             gbFrecuencias.Location = new Point(20, 510);
             gbFrecuencias.Size = new Size(940, 220);
             this.Controls.Add(gbFrecuencias);
 
-            dgvFrecuencias = new DataGridView();
             dgvFrecuencias.Location = new Point(10, 20);
             dgvFrecuencias.Size = new Size(920, 150);
             dgvFrecuencias.ReadOnly = true;
@@ -246,18 +252,23 @@ namespace ModelosDiscretosyContinuos
             dgvFrecuencias.Columns[5].Name = "F * Marca";
             gbFrecuencias.Controls.Add(dgvFrecuencias);
 
+            // Botón Calcular Frecuencias
+            btnCalcularFrecuencias.Text = "Calcular Frecuencias";
+            btnCalcularFrecuencias.Location = new Point(20, 740);
+            btnCalcularFrecuencias.Size = new Size(150, 30);
+            btnCalcularFrecuencias.Click += BtnCalcularFrecuencias_Click;
+            this.Controls.Add(btnCalcularFrecuencias);
 
-            btnEnviarAForm1 = new Button();
+            // Botón Enviar a Form1
             btnEnviarAForm1.Text = "Calcular en Form1";
-            btnEnviarAForm1.Location = new Point(20, 740);
+            btnEnviarAForm1.Location = new Point(180, 740);
             btnEnviarAForm1.Size = new Size(150, 30);
             btnEnviarAForm1.Click += BtnEnviarAForm1_Click;
             this.Controls.Add(btnEnviarAForm1);
 
-
-            btnLimpiar = new Button();
+            // Botón Limpiar
             btnLimpiar.Text = "Limpiar Todo";
-            btnLimpiar.Location = new Point(180, 740);
+            btnLimpiar.Location = new Point(340, 740);
             btnLimpiar.Size = new Size(150, 30);
             btnLimpiar.Click += BtnLimpiar_Click;
             this.Controls.Add(btnLimpiar);

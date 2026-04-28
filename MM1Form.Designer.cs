@@ -46,7 +46,6 @@
             this.txtWs = new System.Windows.Forms.TextBox();
             this.txtPorcentajeUso = new System.Windows.Forms.TextBox();
             this.txtSistemaOcioso = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnMostrarGrafico = new System.Windows.Forms.Button();
@@ -214,15 +213,6 @@
             this.txtSistemaOcioso.Size = new System.Drawing.Size(120, 20);
             this.txtSistemaOcioso.TabIndex = 17;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnCalcular
             // 
             this.btnCalcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,7 +347,6 @@
             this.Controls.Add(this.btnMostrarGrafico);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtSistemaOcioso);
             this.Controls.Add(this.txtPorcentajeUso);
             this.Controls.Add(this.txtWs);
@@ -404,7 +393,6 @@
         private System.Windows.Forms.TextBox txtWs;
         private System.Windows.Forms.TextBox txtPorcentajeUso;
         private System.Windows.Forms.TextBox txtSistemaOcioso;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnMostrarGrafico;
